@@ -1,0 +1,19 @@
+{
+  "name": "infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1010.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.3.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.1010.0",
+    "constructs": "^10.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
