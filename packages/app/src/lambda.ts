@@ -10,7 +10,10 @@ let cachedServer: Handler;
 async function bootstrap(): Promise<Handler> {
   if (!cachedServer) {
     const expressApp = express();
-    const app = await NestFactory.create(AppModule, new ExpressAdapter(expressApp));
+    const app = await NestFactory.create(
+      AppModule,
+      new ExpressAdapter(expressApp),
+    );
     await app.init();
     cachedServer = serverlessExpress({ app: expressApp });
   }

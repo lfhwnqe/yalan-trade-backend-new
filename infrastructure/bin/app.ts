@@ -8,8 +8,11 @@ import * as path from 'path';
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const app = new cdk.App();
-const stackName = process.env.STACK_NAME || 'NestLambdaStack';
+const environment = process.env.ENVIRONMENT || 'dev';
+const stackName = process.env.STACK_NAME || `NestLambdaStack-${environment}`;
+
 new NestLambdaStack(app, stackName, {
+  environment,
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
     region: process.env.CDK_DEFAULT_REGION || process.env.REGION || 'ap-southeast-1',

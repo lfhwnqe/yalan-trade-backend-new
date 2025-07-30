@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "deploy:dev": "ENVIRONMENT=dev REGION=ap-southeast-1 STACK_NAME=NestLambdaStack-dev cdk deploy --profile dev",
+    "deploy:prd": "ENVIRONMENT=prd REGION=us-east-1 STACK_NAME=NestLambdaStack-prd cdk deploy --profile prd"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
