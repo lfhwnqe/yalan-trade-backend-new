@@ -9,7 +9,7 @@ export class NestLambdaStack extends Stack {
     super(scope, id, props);
 
     const lambdaFunc = new lambda.Function(this, 'NestHandler', {
-      runtime: lambda.Runtime.NODEJS_18_X,
+      runtime: lambda.Runtime.NODEJS_LATEST,
       handler: 'lambda.handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '../../dist')),
       timeout: Duration.seconds(30),
